@@ -7,6 +7,11 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',
+        open: {
+        app: {
+            name: 'Google Chrome', // Specify Chrome without changing default browser
+        },
+    },
     },
 });
 
