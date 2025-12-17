@@ -1,4 +1,5 @@
 class Todo {
+    id = crypto.randomUUID();
     constructor(name, description, priority, due) {
         this._name = name;
         this._description = description;
