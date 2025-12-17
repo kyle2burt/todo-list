@@ -1,5 +1,5 @@
 const projectList = document.querySelector("#project-list");
-const projectHead = document.querySelector(".project-head");
+const projectHead = document.querySelector("#project-info");
 const todoList = document.querySelector(".list");
 
 
@@ -12,5 +12,21 @@ function drawProjects(projects) {
     });
 }
 
+function drawSelectedProject(project) {
+    const projectName = document.createElement('h1');
+    const projectDescription = document.createElement('p');
 
-export { drawProjects };
+    projectName.textContent = project.name;
+    projectDescription.textContent = project.description;
+
+    projectHead.appendChild(projectName);
+    projectHead.appendChild(projectDescription);
+
+}
+
+function drawProjectTodos(project) {
+
+}
+
+
+export { drawProjects, drawSelectedProject };
