@@ -1,5 +1,5 @@
 class Project {
-    #todos = [];
+    todos = [];
     constructor(name, description) {
         this._name = name;
         this._description = description;
@@ -20,11 +20,11 @@ class Project {
     }
 
     addTodo(todo) {
-        this.#todos.push(todo);
+        this.todos.push(todo);
     }
 
     removeTodo(todo) {
-        this.#todos = this.#todos.filter((currentTodo) => todo.id != currentTodo.id);
+        this.todos = this.todos.filter((currentTodo) => todo.id != currentTodo.id);
     }
 }
 

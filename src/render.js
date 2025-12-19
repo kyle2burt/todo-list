@@ -25,8 +25,43 @@ function drawSelectedProject(project) {
 }
 
 function drawProjectTodos(project) {
+    project.todos.forEach(todo => {
+        const todoListItem = document.createElement('div');
+        const checkBox = document.createElement('input');
+        const todoName = document.createElement('h3');
+        const todoDescription = document.createElement('p');
+        const todoDue = document.createElement('p');
+        const todoPriority = document.createElement('p');
+        const editButton = document.createElement('button');
+        const deleteButton = document.createElement('button');
 
+        checkBox.setAttribute('type', 'checkbox');
+
+        todoListItem.classList.add('list-item');
+        todoDescription.classList.add('description');
+        todoDue.classList.add('due-date');
+        todoPriority.classList.add('priority');
+        editButton.classList.add('edit');
+        deleteButton.classList.add('delete');
+
+        todoName.textContent = todo.name;
+        todoDescription.textContent = todo.description;
+        todoDue.textContent = todo.due;
+        todoPriority.textContent = todo.priority;
+        editButton.textContent = 'edit';
+        deleteButton.textContent = 'delete';
+
+        todoListItem.appendChild(checkBox);
+        todoListItem.appendChild(todoName);
+        todoListItem.appendChild(todoDescription);
+        todoListItem.appendChild(todoDue);
+        todoListItem.appendChild(todoPriority);
+        todoListItem.appendChild(editButton);
+        todoListItem.appendChild(deleteButton);
+
+        todoList.appendChild(todoListItem);
+    });
 }
 
 
-export { drawProjects, drawSelectedProject };
+export { drawProjects, drawSelectedProject, drawProjectTodos };
