@@ -1,5 +1,6 @@
 class Project {
     todos = [];
+    id = crypto.randomUUID();
     constructor(name, description) {
         this._name = name;
         this._description = description;

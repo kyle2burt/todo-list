@@ -17,9 +17,14 @@ body {
 }
 .sidebar ul {
     list-style: none;
+    padding: 0;
 }
 .sidebar ul li {
     padding: 10px;
+    border-radius: 10px;
+}
+.sidebar ul li:hover {
+    background-color: var(--lightblue);
 }
 .main {
     padding: 20px 50px;

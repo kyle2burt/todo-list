@@ -7,12 +7,16 @@ function drawProjects(projects) {
     projects.forEach(project => {
         const projectLi = document.createElement('li');
         projectLi.textContent = project.name;
+        projectLi.dataset.id = project.id;
 
         projectList.appendChild(projectLi);
     });
 }
 
 function drawSelectedProject(project) {
+    while (projectHead.lastElementChild) {
+        projectHead.removeChild(projectHead.lastElementChild);
+    }
     const projectName = document.createElement('h1');
     const projectDescription = document.createElement('p');
 
@@ -22,9 +26,14 @@ function drawSelectedProject(project) {
     projectHead.appendChild(projectName);
     projectHead.appendChild(projectDescription);
 
+    drawProjectTodos(project);
+
 }
 
 function drawProjectTodos(project) {
+    while (todoList.lastElementChild) {
+        todoList.removeChild(todoList.lastElementChild);
+    }
     project.todos.forEach(todo => {
         const todoListItem = document.createElement('div');
         const checkBox = document.createElement('input');
